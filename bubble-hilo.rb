@@ -1,15 +1,15 @@
-myarray = [5,4,6,2,12,3]
-solidcount = myarray.count 
+puts "Enter your numbers, separated by spaces "
+enterednums = gets.strip.chomp
+myarray = enterednums.split(" ").map {|x| x.to_i}
+solidcount = myarray.count
 puts "Starting Array: #{myarray}"
 
 #while loop starts here? 
 
-index = 0
 arrangedarray = [] 
+while arrangedarray.count != solidcount 
 
-while arrangedarray.count != solidcount
-
-	lowest = myarray[(index)..-1].min #to find the new min after the prev min
+	lowest = myarray.min #to find the new min after the prev min
 	puts "The next lowest number is #{lowest}."
 	arrangedarray.push(lowest) #adds min # to new array 
 	myarray = myarray - [lowest] #removes min # from old array 
@@ -17,7 +17,6 @@ while arrangedarray.count != solidcount
 
 	#index += 1 
 	puts "My new array now contains the lowest number and is #{arrangedarray}"
-
 
 end 
 
